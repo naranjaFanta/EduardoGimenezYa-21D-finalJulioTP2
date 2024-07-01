@@ -1,6 +1,5 @@
-
 import express from 'express';
-
+import route from './src/routes/routes.js'
 
 const app = express();
 const PORT = 8080;
@@ -9,6 +8,7 @@ const PORT = 8080;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use("/api", route);
 
 // Inicialización del servidor en el puerto especificado
 app.listen(PORT, () => console.log(`Servidor listo en puerto ${PORT}`));
